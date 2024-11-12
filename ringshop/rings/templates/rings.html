@@ -2,28 +2,29 @@
 
 {% load static %}
 
-{% block  %}
+{% block  body %}
 
 
 
-
+<div class="col-md-6">
  <form action="" method="post" enctype="multipart/form-data">
  {% csrf_token %}
 
-    <input type="text"  class="form-control"  placeholder="Name" required>
+    <input class="name" type="text"  class="form-control mt-2 mb-2 btn btn-outline-success"  placeholder="Name" required>
   <br/>
-  <input type="email"  class="form-control"  placeholder="Email"required>
+  <input class="email" type="email"  class="form-control mt-2 mb-2 btn btn-outline-success"  placeholder="Email"required>
   <br/>
-  <input type="number" class="form-control"  placeholder="Phone number"required>
+  <input class="phone"  type="number" class="form-control mt-2 mb-2 btn btn-outline-success"  placeholder="Phone number"required>
   <br/>
-  <input type="number" class="form-control"    placeholder="Age" required>
+  <input class="age" type="number" class="form-control mt-2 mb-2 btn btn-outline-success"    placeholder="Age" required>
   <br/>
-  <input type="file" >
+  <input class="image" type="file"  class="form-control mt-2 mb-2 btn btn-outline-success" required>
   <br/>
-  <input type="submit"class="form-control"    value="save">
-
+  <input type="submit" class="form-control btn btn-success"    value="save" >
 
  </form>
 
+
+</div>
 
  {% endblock  %}
