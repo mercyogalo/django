@@ -1,27 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body{
-            background-color:purple;
-            color:white;
-            text-align:center;
-        }
-        a{
-            text-decoration:none;
-            color:white;
-        }
-    </style>
-</head>
-<body>
-    
-    <h2>Rings page</h2>
-    <a href="/">home</a>
-    <a href="/about/">about</a>
-    <a href="/rings/">rings</a>
+{% extends "layout.html" %}
 
-</body>
-</html>
+{% load static %}
+
+{% block  %}
+
+
+
+
+ <form action="" method="post" enctype="multipart/form-data">
+ {% csrf_token %}
+
+    <input type="text"  class="form-control"  placeholder="Name" required>
+  <br/>
+  <input type="email"  class="form-control"  placeholder="Email"required>
+  <br/>
+  <input type="number" class="form-control"  placeholder="Phone number"required>
+  <br/>
+  <input type="number" class="form-control"    placeholder="Age" required>
+  <br/>
+  <input type="file" >
+  <br/>
+  <input type="submit"class="form-control"    value="save">
+
+
+ </form>
+
+
+ {% endblock  %}

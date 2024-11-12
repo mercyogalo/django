@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 
 def home(request):
-    name="Joseph Ondieki"
+    name="Mercy Ogalo"
     context={
         "name": name,
         "phone_number": 743264872,
