@@ -15,16 +15,22 @@
     <th>image</th>
 <tr>
 
-    {% for ring in rings %}
+    {% for student in students %}
     <tr>
-        <td>1</td>
-        <td>mark</td>
-        <td>mark@gmail</td>
-        <td>7</td>
-        <td>7438349</td>
-        <td>image</td>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.email }}</td>
+        <td>{{ student.age }}</td>
+        <td>{{ student.phone }}</td>
+        <td>
+            {% if student.image %}
+                <img src="{{ student.image.url }}" alt="Student Image" width="50">
+            {% else %}
+                No Image
+            {% endif %}
+        </td>
     </tr>
-    {% endfor %}
+{% endfor %}
 
 
  </table>
