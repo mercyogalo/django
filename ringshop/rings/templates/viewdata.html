@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+    
+
+
+{% block body %}
+ <h2>view page</h2>
+
+ <table class=" table table-striped table-bordered">
+<tr>
+    <th>#</th>
+    <th>name</th>
+    <th>email</th>
+    <th>age</th>
+    <th>phone</th>
+    <th>image</th>
+<tr>
+
+    {% for ring in rings %}
+    <tr>
+        <td>1</td>
+        <td>mark</td>
+        <td>mark@gmail</td>
+        <td>7</td>
+        <td>7438349</td>
+        <td>image</td>
+    </tr>
+    {% endfor %}
+
+
+ </table>
+
+ 
+{% endblock  %}
