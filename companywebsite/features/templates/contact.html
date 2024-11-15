@@ -60,7 +60,14 @@
           </div>
 
           <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                 {% if submit_message %}
+                 <div >
+                  <p>{{submit_message}}</p>
+                  <div>
+                          {% endif %}
+
+            <form action="{% url "contact" %}"class="php-email-form"  method="post" role="form"  id ="contact-form"enctype="multipart/form-data">
+              {% csrf_token %}
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
@@ -80,7 +87,7 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"><button onSubmit="formSubmit()"type="submit">Send Message</button></div>
             </form>
           </div><!-- End Contact Form -->
 
@@ -91,5 +98,6 @@
     </section><!-- /Contact Section -->
 
   </main>
+
 
   {% endblock  %}

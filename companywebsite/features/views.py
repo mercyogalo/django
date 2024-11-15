@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from .models import Messages
 
 # Create your views here.
 def index(request):
@@ -13,8 +14,29 @@ def blogDetails(request):
 def blog(request):
     return render(request,'blog.html')
 
+
+
+
+
 def contact(request):
-    return render(request,'contact.html')
+    context = {}
+    if request.method == "POST":
+        name = request.POST['name']
+        email = request.POST['email']
+        subject = request.POST['subject'].lower()  # Fixing the .lower() usage
+        message = request.POST['message']
+        
+        
+        eachMessage=Messages(name=name, email=email, subject=subject, message=message)
+        eachMessage.save()
+        redirect('./')
+        context['submit_message']=f"Thank you {name} for contacting us. Your issue on {subject} will be addressed with our team shortly."
+    
+    return render(request, 'contact.html', context)
+
+  
+
+
 
 def portfolioDetails(request):
     return render(request, 'portfolio-details.html')
