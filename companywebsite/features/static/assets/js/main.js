@@ -193,7 +193,4 @@
 
 })();
 
-function formSubmit(){
-  let contactForm=document.getElementById("contact-form");
-  console.log(contactForm)
-    }
+

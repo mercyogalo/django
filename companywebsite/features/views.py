@@ -29,10 +29,8 @@ def contact(request):
         
         eachMessage=Messages(name=name, email=email, subject=subject, message=message)
         eachMessage.save()
-        redirect('./')
-        context['submit_message']=f"Thank you {name} for contacting us. Your issue on {subject} will be addressed with our team shortly."
     
-    return render(request, 'contact.html', context)
+    return render(request, 'contact.html')
 
   
 
