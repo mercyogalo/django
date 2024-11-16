@@ -19,7 +19,7 @@ def blog(request):
 
 
 def contact(request):
-    context = {}
+
     if request.method == "POST":
         name = request.POST['name']
         email = request.POST['email']
